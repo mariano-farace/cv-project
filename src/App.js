@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import uniqid from "uniqid";
+import General from "./components/General"
+class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {general:{
+    name: '',email:"", phoneNumber: "", id : uniqid()
+  }
+    };
+    this.setGeneral = this.setGeneral.bind(this);
+  }
+
+  setGeneral(key, value){
+    this.setState({
+      ...this.state,
+      general: {
+        ...this.state.general,
+        [key]:value
+      }
+    });
+  }
+  render() {
+    const general = this.props.general
+    return (<General general={general} setGeneral={this.setGeneral}/>)
+  }
 }
 
 export default App;
