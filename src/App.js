@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import uniqid from "uniqid";
 import General from "./components/General"
+import Education from "./components/Education";
+import { ButtonNewEducation } from "./components/ButtonNewEducation";
 class App extends Component {
 
   constructor(props) {
@@ -21,9 +23,22 @@ class App extends Component {
       }
     });
   }
+
+
+
+
+  
   render() {
     const general = this.props.general
-    return (<General general={general} setGeneral={this.setGeneral}/>)
+    return (
+    <div>
+    <h2>Personal Information</h2>
+    <General general={general} setGeneral={this.setGeneral}/>
+    <hr></hr>
+    <h2>Education Experience</h2>
+    <Education/>
+    <ButtonNewEducation text="+ Add education"/>
+    </div>)
   }
 }
 

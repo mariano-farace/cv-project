@@ -1,6 +1,6 @@
 import React from "react";
 
-class General extends React.Component {
+class Education extends React.Component {
   constructor(props) {
     super(props);
        this.handleInputChange = this.handleInputChange.bind(this);
@@ -17,15 +17,15 @@ class General extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
+          School Name:
           <input
-            name="name"
+            name="school-name"
             type="text"
             onChange={this.handleInputChange} />
         </label>
         <br />
         <label>
-          Email:
+        Title Of Study:
           <input
             name="email"
             type="text"
@@ -33,11 +33,23 @@ class General extends React.Component {
         </label>
         <br />
         <label>
-          Phone Number:
+        Start Date:
           <input
-            name="phoneNumber"
-            type="text"
-            onChange={this.handleInputChange} />
+            name="start-date"
+            type="date"
+            onChange={this.handleInputChange}
+            value="2018-07-22"
+       min="2018-01-01" max="2018-12-31" />
+        </label>
+        <br />
+        <label>
+        End Date:
+          <input
+            name="end-date"
+            type="date"
+            onChange={this.handleInputChange}
+            value="2018-07-22"
+       min="2018-01-01" max="2018-12-31" />
         </label>
         <br />
         <input type="submit" value="Submit"  />
@@ -46,5 +58,4 @@ class General extends React.Component {
   }
 }
 
-
-export default General;
+export default Education;
