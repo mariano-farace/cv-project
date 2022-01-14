@@ -11,8 +11,12 @@ class App extends Component {
     name: '',email:"", phoneNumber: "", id : uniqid()
   }
     };
+  
     this.setGeneral = this.setGeneral.bind(this);
+    this.setEducation = this.setEducation.bind(this)
   }
+
+ 
 
   setGeneral(key, value){
     this.setState({
@@ -23,6 +27,14 @@ class App extends Component {
       }
     });
   }
+
+  setEducation(key,value){  this.setState({
+    ...this.state,
+    education: {
+      ...this.state.education,
+      [key]:value
+    }
+  });}
 
 
 
@@ -37,7 +49,7 @@ class App extends Component {
     <hr></hr>
     <h2>Education Experience</h2>
     <Education/>
-    <ButtonNewEducation text="+ Add education"/>
+    <ButtonNewEducation setEducation={this.setEducation} text="+ Add education"/>
     </div>)
   }
 }
