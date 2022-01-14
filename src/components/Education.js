@@ -8,7 +8,7 @@ class Education extends React.Component {
 
   handleInputChange(event) {
     
-    this.props.setGeneral(event.target.name,event.target.value
+    this.props.setEducation(event.target.name,event.target.value
     )
 
     
@@ -27,7 +27,7 @@ class Education extends React.Component {
         <label>
         Title Of Study:
           <input
-            name="email"
+            name="title-of-study"
             type="text"
             onChange={this.handleInputChange} />
         </label>

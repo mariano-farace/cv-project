@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
     this.state = {general:{
     name: '',email:"", phoneNumber: "", id : uniqid()
-  }
+  },
+  education: {}
     };
   
     this.setGeneral = this.setGeneral.bind(this);
@@ -48,8 +49,8 @@ class App extends Component {
     <General general={general} setGeneral={this.setGeneral}/>
     <hr></hr>
     <h2>Education Experience</h2>
-    <Education/>
-    <ButtonNewEducation setEducation={this.setEducation} text="+ Add education"/>
+    <Education  setEducation={this.setEducation}/>
+    <ButtonNewEducation text="+ Add education"/>
     </div>)
   }
 }
